@@ -1,3 +1,5 @@
+# TESTING
+
 npx hardhat node (runs the node)
 npx hardhat ignition deploy --network testnet ignition/modules/PGCToken.ts (deploys the contract)
 
