@@ -5,10 +5,10 @@ let balance;
 
 
 const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
-const abi = [
+/*const abi = [
   "function transfer(address to, uint256 value) returns (bool)",
   "function balanceOf(address owner) view returns (uint256)"
-];
+];*/
 
 let lista = ""
 for(let i = 0; i<accounts.length; i++){
