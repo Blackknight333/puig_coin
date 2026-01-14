@@ -9,15 +9,18 @@
 
 <h1>Puig Coin</h1>
 
-<button onclick="connectWallet()">Conectar MetaMask</button>
-<p id="account"></p>
-<p id="balance"></p>
+<select id="accounts"></select>
+
+<button onclick="connectWallet()">Conectar</button>
+<p id="account">No account connected</p>
+<p id="balance">Balance unknown</p>
 
 <h3>Enviar Pugies</h3>
-<input type="text" id="to" placeholder="Dirección destino">
+<select id="to"></select>
 <input type="number" id="amount" placeholder="Cantidad">
 <button onclick="sendTokens()">Enviar</button>
 
+<script src="accounts.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
