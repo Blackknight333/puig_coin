@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Puig Coin</title>
+  <script src="https://cdn.jsdelivr.net/npm/ethers@6.8.1/dist/ethers.umd.min.js"></script>
+</head>
+<body>
+
+<h1>Puig Coin</h1>
+
+<button onclick="connectWallet()">Conectar MetaMask</button>
+<p id="account"></p>
+<p id="balance"></p>
+
+<h3>Enviar Pugies</h3>
+<input type="text" id="to" placeholder="Dirección destino">
+<input type="number" id="amount" placeholder="Cantidad">
+<button onclick="sendTokens()">Enviar</button>
+
+<script src="app.js"></script>
+</body>
+</html>
