@@ -7,6 +7,18 @@
 </head>
 <body>
 
+ <button id="downloadBtn">Download checkpoint</button>
+  <br><br>
+
+  <input type="file" id="uploadInput" accept=".json">
+  <br><br>
+
+  <button onclick="recoverCheckpoint()">Reload checkpoint</button>
+  <br>
+
+  <strong>Loaded JSON Object:</strong>
+  <pre id="output"></pre>
+
 <h1>Puig Coin</h1>
 
 <select id="accounts"></select>
