@@ -1,0 +1,39 @@
+// contracts/PGCToken.sol
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+
+contract PGCToken is ERC20 {
+    address authorized_accounts[] = []
+
+    constructor(uint256 initialSupply) ERC20("PUIG COIN", "PGC") {
+        _mint(msg.sender, initialSupply);
+        authorized_accounts.push(msg.sender);
+    }
+
+    function decimals() public view virtual override returns (uint8) {
+        return 1;
+    }
+
+    function authorize_account(address account) public {
+        if(!is_sender_authorized(msg.sender)){
+            revert ERC20InvalidSender(msg.sender);
+        }
+        authorized_accounts.push(account)
+    }
+
+    function is_sender_authorized(address account) public view returns (bool) {
+        for(uint i = 0; i < authorized_accounts.length){
+            if(account == authorized_accounts[i]) return true;
+        }
+        return false;
+    }
+
+    function mint(address account, uint256 value) public {
+        if(!is_sender_authorized(msg.sender)){
+            revert ERC20InvalidSender(msg.sender);
+        }
+        _mint(account, value);
+    }
+}
