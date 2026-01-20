@@ -1,0 +1,30 @@
+services:
+
+  hardhat_node:
+    build:
+      context: .
+      dockerfile: ./dockerization/hardhat_node/Dockerfile
+    container_name: hardhat_node_instance
+    ports:
+      - "8545:8545"
+    networks:
+      - project
+  
+  contract_deployer:
+    build:
+      context: .
+      dockerfile: ./dockerization/contract_deployer/Dockerfile
+    container_name: contract_deployer_instance
+    depends_on:
+      - hardhat_node
+    volumes:
+      - ./contracts:/home/node/app/contracts
+      - ./ignition:/home/node/app/ignition
+      - ./dockerization/contract_deployer:/home/node/app/dockerization/contract_deployer
+      - ./hardhat.config.ts:/home/node/app/hardhat.config.ts
+    networks:
+      - project
+
+networks:
+  project:
+    driver: bridge
