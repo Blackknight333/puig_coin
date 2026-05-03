@@ -35,17 +35,17 @@ async function connectWallet() {
   // await provider.send("eth_requestAccounts", []);
   value_from_lista = document.getElementById("accounts").value
   console.log(accounts[value_from_lista].address)
-  // instanciar un signer (cuenta que firma transacciones). Se la pedimos al nodo, que ya la tiene configured.
+  // instanciar un signer (cuenta que firma transacciones). Se la pedimos al nodo, que ya la tiene configurada.
   signer = await provider.getSigner(accounts[value_from_lista].address);
 
 
 
   address = await signer.getAddress();
-  document.getElementById("account").innerText = `Conectado: ${address}`;
+  document.getElementById("account").innerText = `Conectado`;
 
-  // instanciamos el contrato. Necesitamos: direccion, interfaz (para saber qué funciones tiene) y cuenta con la que se van a firmar las transacciones.
+  // instanciar el contrato: direccion, interfaz (para saber qué funciones tiene) y cuenta con la que se van a firmar las transacciones.
   contract = new ethers.Contract(contractAddress, abi, signer);
-  balance = await contract.balanceOf(address); // Llamada al contrato. Solo es un read (no se genera transacción a propagar porque no se cambia nada.)
+  balance = await contract.balanceOf(address); // Llamada al contrato.
   console.log("BALANCE: " + balance)
   document.getElementById("balance").innerText = `Pugies: ${balance}`
 }
@@ -77,7 +77,7 @@ async function sendTokens() {
 
   // Esperamos a que se propague.
   await tx.wait();
-  // Si se propaga, is cool. Mensaje al user.
+  // Si funciona. Mensaje al usuario.
   alert(`Transacción completada \n Sent ${ethers.parseUnits(amount, 0)} to ${to}`);
   jsonData.push({
     "from": address,
@@ -88,11 +88,9 @@ async function sendTokens() {
 
 async function recoverCheckpoint() {
   console.log("Reloading checkpoint...")
-  // Una iteración del bucle por elemento en el json.
   for (let i = 0; i < jsonData.length; i++) {
     signer = await provider.getSigner(jsonData[i].from);
     contract = new ethers.Contract(contractAddress, abi, signer);
-    // Igual que antes, genera transacción. Una vez por iteración. Cada transacción es un transfer.
     const tx = await contract.transfer(
       jsonData[i].to,
       //ethers.parseUnits(amount, 18)
@@ -111,7 +109,7 @@ let jsonData = [];
 // const output = document.getElementById("output");
 // output.textContent = JSON.stringify(jsonData, null, 2);
 
-// 2. Download JSON as file GPT SHIT
+// 2. Download JSON as file
 document.getElementById("downloadBtn").addEventListener("click", () => {
   const jsonString = JSON.stringify(jsonData, null, 2);
   const blob = new Blob([jsonString], { type: "application/json" });
@@ -125,7 +123,7 @@ document.getElementById("downloadBtn").addEventListener("click", () => {
   URL.revokeObjectURL(url);
 });
 
-// 3. Upload JSON file and store it in a variable GPT SHIT
+// 3. Upload JSON file and store it in a variable
 document.getElementById("uploadInput").addEventListener("change", (event) => {
   const file = event.target.files[0];
   if (!file) return;

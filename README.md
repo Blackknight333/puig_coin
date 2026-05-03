@@ -1,8 +1,7 @@
-# 
-npx hardhat node (runs the node)
-npx hardhat ignition deploy --network testnet ignition/modules/PGCToken.ts (deploys the contract)
+npx hardhat node 
+npx hardhat ignition deploy --network testnet ignition/modules/PGCToken.ts
 
-node register.cjs
+node register.cjs (afegir usuari)
 
 
 

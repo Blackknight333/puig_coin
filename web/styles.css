@@ -1,0 +1,73 @@
+/* Establece el fondo y el color del texto */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #FFFAF0;  /* Color de fondo suave */
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Contenedor principal */
+.container {
+  text-align: center;
+  padding: 20px;
+  background-color: #FF7F50; /* Rojo anaranjado */
+  border-radius: 10px;
+  margin: 20px auto;
+  width: 80%;
+  max-width: 600px;
+}
+
+/* Títulos */
+h1, h3 {
+  color: #FF4500; /* Naranja fuerte */
+  text-align: center;
+}
+
+/* Inputs y botones */
+input[type="password"], input[type="number"], select {
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #FF4500; /* Borde naranjado */
+  width: 80%;
+  max-width: 300px;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #FF6347; /* Tomate rojo */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #FF4500; /* Naranja fuerte cuando pasa el cursor */
+}
+
+/* Texto de los mensajes de cuenta y balance */
+#account, #balance {
+  font-weight: bold;
+  color: #FF6347; /* Rojo tomate */
+}
+
+#result {
+  font-family: monospace;
+  background-color: #FFFAF0;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  border: 1px solid #FF6347; /* Borde rojo tomate */
+}
+
+/* Contenedor para el formulario de enviar tokens */
+.send-container {
+  text-align: center;
+  margin-top: 30px;
+}
+
+
