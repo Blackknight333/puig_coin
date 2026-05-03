@@ -1,73 +1,107 @@
-/* Establece el fondo y el color del texto */
+/* Configuració general */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #FFFAF0;  /* Color de fondo suave */
+  font-family: 'Arial', sans-serif;
+  background-color: #FFF6E5; /* Fons suau taronja clar */
   color: #333;
   margin: 0;
   padding: 0;
+  text-align: center;
 }
 
-/* Contenedor principal */
+/* Contenidor principal */
 .container {
-  text-align: center;
-  padding: 20px;
-  background-color: #FF7F50; /* Rojo anaranjado */
-  border-radius: 10px;
-  margin: 20px auto;
+  padding: 40px;
+  background-color: #FF6A13; /* Taronja fosc */
+  border-radius: 15px;
   width: 80%;
-  max-width: 600px;
+  max-width: 700px;
+  margin: 30px auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Títulos */
+/* Títols */
 h1, h3 {
-  color: #FF4500; /* Naranja fuerte */
-  text-align: center;
+  color: #FF4500; /* Taronja fort */
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Inputs y botones */
+/* Inputs i Selects */
 input[type="password"], input[type="number"], select {
-  padding: 10px;
+  padding: 12px;
   margin: 10px 0;
-  border-radius: 5px;
-  border: 1px solid #FF4500; /* Borde naranjado */
-  width: 80%;
-  max-width: 300px;
+  border-radius: 8px;
+  border: 2px solid #FF8C00; /* Borde taronja */
+  background-color: #FFF8E1; /* Fons molt suau de taronja */
   font-size: 16px;
+  width: 80%;
+  max-width: 320px;
+  transition: all 0.3s ease;
 }
 
+input[type="password"]:focus, input[type="number"]:focus, select:focus {
+  border-color: #FF4500; /* Canvia el color del borde quan està seleccionat */
+  outline: none;
+  background-color: #FFEECC; /* Canvia el fons quan l'usuari interactua */
+}
+
+/* Botons */
 button {
-  padding: 10px 20px;
-  background-color: #FF6347; /* Tomate rojo */
+  padding: 12px 25px;
+  background-color: #FF6347; /* Taronja viu */
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
   font-size: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
-  background-color: #FF4500; /* Naranja fuerte cuando pasa el cursor */
+  background-color: #FF4500; /* Taronja més fosc */
+  transform: translateY(-3px); /* Petita animació de moviment cap amunt */
 }
 
-/* Texto de los mensajes de cuenta y balance */
+button:active {
+  transform: translateY(1px); /* Quan s'està fent clic, es mou cap avall */
+}
+
+/* Text de resultats i estat */
 #account, #balance {
   font-weight: bold;
-  color: #FF6347; /* Rojo tomate */
+  color: #FF6A13; /* Taronja fosc */
+  font-size: 1.2rem;
+  margin-top: 10px;
 }
 
 #result {
-  font-family: monospace;
-  background-color: #FFFAF0;
+  font-family: 'Courier New', monospace;
+  background-color: #FFFBF0; /* Fons gairebé blanc */
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 8px;
   margin-top: 10px;
-  border: 1px solid #FF6347; /* Borde rojo tomate */
+  border: 2px solid #FF6347; /* Borde taronja viu */
+  max-width: 90%;
+  margin: 20px auto;
 }
 
-/* Contenedor para el formulario de enviar tokens */
+/* Contenidor per enviar tokens */
 .send-container {
-  text-align: center;
   margin-top: 30px;
 }
 
+h3 {
+  font-size: 1.8rem;
+  color: #FF6347; /* Taronja viu */
+}
 
+/* Afegim una mica de marges al final per la pàgina */
+footer {
+  padding: 20px 0;
+  background-color: #FF6A13;
+  color: white;
+  font-size: 1rem;
+}

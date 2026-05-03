@@ -53,6 +53,7 @@ async function connectWallet() {
 async function sendTokens() {
   let index = document.getElementById("to").value
   console.log(index)
+  let sent_name = accounts[index].name
   let to = accounts[index].address
   //const to = document.getElementById("to").value;
   console.log(to)
@@ -78,7 +79,7 @@ async function sendTokens() {
   // Esperamos a que se propague.
   await tx.wait();
   // Si funciona. Mensaje al usuario.
-  alert(`Transacción completada \n Sent ${ethers.parseUnits(amount, 0)} to ${to}`);
+  alert(`Transacción completada \n Sent ${ethers.parseUnits(amount, 0)} to ${sent_name}`);
   jsonData.push({
     "from": address,
     "to": to,
