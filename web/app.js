@@ -25,6 +25,7 @@ provider = new ethers.JsonRpcProvider();
 function sepolia_activation(){
   contractAddress = "0x664F48E841Ed383a93bFfDAAf3b369fB36E4Cb90";
   sepolia = true
+  document.getElementById("sepolia").style.backgroundColor="green"
 }
 
 async function connectWallet() {
