@@ -2,6 +2,8 @@ let accounts = [
   {
     "name": "Fran",
     "address": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+    "address_sepolia": "0xaF1449851ce0A281FDb83D25305753eFaB22ff68",
+    "priv_key_sepolia": "5e16cc7944f35e4d8b7eb8533f63068a9f1dad0bb4b7a78a0fd3f25e0fb0e56f",
     "salt": "a831a76089281d23c440ec22e16eeac4",
     "passwordHash": "857d40a3ae4fe632109b07ffab82c260c1c0ff4a993f25971fac7f292acea491ff94e2a16445114157b08d4731b61fc180d53819ab891b04534da707052ffa8b",
     "iterations": 100000,
@@ -10,6 +12,8 @@ let accounts = [
   {
     "name": "Roderic",
     "address": "0x70997970c51812dc3a010c7d01b50e0d17dc79c8",
+    "address_sepolia": "0x4AE6052CD45d35Ed033E2F37C77CB029fC7932ca",
+    "priv_key_sepolia": "1b20fd76c650e2035233a26d7240815ca84660b5a5310cc0c1bd077ff8fbd912",
     "salt": "b97b3775721d2a74f669d355ab474091",
     "passwordHash": "ad4e271a0c608b352e093dc410e2c2c57f8f127c7f9855ce967d17e4d4e941c9990abb424fd481258074f00979f9bdc0991060a8dd77bd614cc37c1ce02ae52e",
     "iterations": 100000,

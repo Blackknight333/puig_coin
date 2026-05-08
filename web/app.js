@@ -5,7 +5,8 @@ let balance;
 let address
 
 
-const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
+let contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
+let sepolia = false
 /*const abi = [
   "function transfer(address to, uint256 value) returns (bool)",
   "function balanceOf(address owner) view returns (uint256)"
@@ -21,6 +22,11 @@ document.getElementById("to").innerHTML = lista;
 let value_from_lista;
 provider = new ethers.JsonRpcProvider();
 
+function sepolia_activation(){
+  contractAddress = "0x664F48E841Ed383a93bFfDAAf3b369fB36E4Cb90";
+  sepolia = true
+}
+
 async function connectWallet() {
   console.log("CALLED connectWallet")
   console.log(accounts[0].name)
@@ -29,7 +35,8 @@ async function connectWallet() {
     return;
   }*/
 
-  //provider = new ethers.BrowserProvider(window.ethereum);
+  if(!sepolia){
+    //provider = new ethers.BrowserProvider(window.ethereum);
   // conectarse al nodo
   provider = new ethers.JsonRpcProvider(); //por defecto es http://localhost:8545
   // await provider.send("eth_requestAccounts", []);
@@ -37,6 +44,15 @@ async function connectWallet() {
   console.log(accounts[value_from_lista].address)
   // instanciar un signer (cuenta que firma transacciones). Se la pedimos al nodo, que ya la tiene configurada.
   signer = await provider.getSigner(accounts[value_from_lista].address);
+  }
+  else{
+    provider = new ethers.JsonRpcProvider("https://ethereum-sepolia-rpc.publicnode.com");
+    value_from_lista = document.getElementById("accounts").value
+    console.log(accounts[value_from_lista].address_sepolia)
+    signer = new ethers.Wallet(accounts[value_from_lista].priv_key_sepolia, provider)
+
+  }
+
 
 
 
@@ -54,7 +70,7 @@ async function sendTokens() {
   let index = document.getElementById("to").value
   console.log(index)
   let sent_name = accounts[index].name
-  let to = accounts[index].address
+  let to = sepolia ? accounts[index].address_sepolia : accounts[index].address;
   //const to = document.getElementById("to").value;
   console.log(to)
   const amount = document.getElementById("amount").value;

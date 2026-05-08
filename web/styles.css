@@ -69,6 +69,11 @@ button:active {
   transform: translateY(1px); /* Quan s'està fent clic, es mou cap avall */
 }
 
+#sepolia:focus {
+  background-color: green; /* Quan s'està fent clic, es mou cap avall */
+}
+
+
 /* Text de resultats i estat */
 #account, #balance {
   font-weight: bold;

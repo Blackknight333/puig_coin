@@ -31,8 +31,8 @@ export default defineConfig({
     sepolia: {
       type: "http",
       chainType: "l1",
-      url: configVariable("SEPOLIA_RPC_URL"),
-      accounts: [configVariable("SEPOLIA_PRIVATE_KEY")],
+      url: "https://ethereum-sepolia-rpc.publicnode.com",
+      accounts: ["5e16cc7944f35e4d8b7eb8533f63068a9f1dad0bb4b7a78a0fd3f25e0fb0e56f"],
     },
     testnet: {
       type: "http",
